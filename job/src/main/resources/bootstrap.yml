@@ -2,7 +2,7 @@ server:
   port: ${SERVER_PORT:8999}
 spring:
   profiles:
-    include: core,test
+    include: core,dev
   application:
     name: job
   cloud:

@@ -23,6 +23,6 @@
             JOIN wk_crm_field as b on a.field_id = b.field_id
         WHERE
             a.mask_type >= #{maskType} and a.label = #{label}
-        GROUP BY field_name
+        GROUP BY field_name, type
     </select>
 </mapper>

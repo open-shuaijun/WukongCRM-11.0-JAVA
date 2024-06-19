@@ -28,7 +28,7 @@
             #{item}
         </for>
         and DATE_FORMAT(create_time,#{sqlDateFormat}) between #{beginTime} and #{finalTime}
-        GROUP BY ccbs.`name`,ccbs.order_num,ccb.type_id order by ccbs.order_num
+        GROUP BY ccbs.`name`,ccbs.order_num,ccb.type_id,ccbs.status_id order by ccbs.order_num
     </select>
 
 
