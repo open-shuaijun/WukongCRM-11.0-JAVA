@@ -1,0 +1,82 @@
+version: '3'
+services:
+  admin:
+    build:
+      context: ./admin
+      dockerfile: Dockerfile
+    networks:
+      wkcrm_network:
+
+  authorization:
+    build:
+      context: ./authorization
+      dockerfile: Dockerfile
+    networks:
+      wkcrm_network:
+
+  bi:
+    build:
+      context: ./bi
+      dockerfile: Dockerfile
+    networks:
+      wkcrm_network:
+
+  crm:
+    build:
+      context: ./crm
+      dockerfile: Dockerfile
+    networks:
+      wkcrm_network:
+
+  examine:
+    build:
+      context: ./examine
+      dockerfile: Dockerfile
+    networks:
+      wkcrm_network:
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - 8443:8443
+    networks:
+      wkcrm_network:
+
+  hrm:
+    build:
+      context: ./hrm
+      dockerfile: Dockerfile
+    networks:
+      wkcrm_network:
+
+  job:
+    build:
+      context: ./job
+      dockerfile: Dockerfile
+    ports:
+      - 8999:8999
+    networks:
+      wkcrm_network:
+
+  oa:
+    build:
+      context: ./oa
+      dockerfile: Dockerfile
+    networks:
+      wkcrm_network:
+
+  work:
+    build:
+      context: ./work
+      dockerfile: Dockerfile
+    networks:
+      wkcrm_network:
+
+networks:
+  wkcrm_network:
+    external:
+      true
+    driver: bridge
+

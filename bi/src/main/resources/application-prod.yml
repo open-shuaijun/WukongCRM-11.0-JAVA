@@ -13,6 +13,6 @@ spring:
     password: ${DATASOURCE_PASSWORD:password}
   elasticsearch:
     rest:
-      uris: 127.0.0.1:9200
+      uris: 192.168.30.86:9200
       username:
       password:

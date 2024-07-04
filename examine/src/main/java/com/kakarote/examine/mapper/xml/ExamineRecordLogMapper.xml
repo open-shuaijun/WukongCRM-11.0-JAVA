@@ -50,7 +50,19 @@
     </select>
 
     <select id="selectRecordTypeIdListByUser" resultType="java.lang.Integer">
-        SELECT DISTINCT r.type_id FROM  `wk_examine_record` r WHERE r.record_id IN (
+        SELECT DISTINCT r.type_id
+        <choose>
+            <when test="data.status == 1">
+                ,r.create_time
+            </when>
+            <when test="data.status == 2">
+                , r.update_time
+            </when>
+            <otherwise>
+               ,r.create_time
+            </otherwise>
+        </choose>
+        FROM  `wk_examine_record` r WHERE r.record_id IN (
             SELECT
                 t.record_id
             FROM

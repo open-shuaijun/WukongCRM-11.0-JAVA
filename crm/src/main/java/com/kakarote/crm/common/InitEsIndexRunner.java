@@ -249,6 +249,7 @@ public class InitEsIndexRunner implements ApplicationRunner {
     private List<CrmModelFiledVO> queryInitField(Integer type) {
         LambdaQueryWrapper<CrmField> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(CrmField::getLabel, type).orderByAsc(CrmField::getSorting);
+        wrapper.groupBy(CrmField::getFieldId);
         wrapper.groupBy(CrmField::getFieldName);
         List<CrmField> crmFieldList = crmFieldService.list(wrapper);
         CrmEnum crmEnum = CrmEnum.parse(type);

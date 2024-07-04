@@ -262,6 +262,7 @@ public class AdminUserController {
         }
         AdminUserConfig userConfigByName = adminUserConfigService.queryUserConfigByName("InitUserConfig");
         if(userConfigByName != null){
+            System.out.println(userConfigByName);
             adminUser.setServerUserInfo(JSON.parseObject(userConfigByName.getValue()));
         }
         return R.ok(adminUser);

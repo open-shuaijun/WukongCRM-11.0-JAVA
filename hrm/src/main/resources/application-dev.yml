@@ -1,16 +1,16 @@
 spring:
   redis:
-    host: ${REDIS_HOST:127.0.0.1}
+    host: ${REDIS_HOST:192.168.30.86}
     port: ${REDIS_PORT:6379}
-    password: ${REDIS_PASSWORD:565656}
+    password: ${REDIS_PASSWORD:easytouch#2016}
     database: 12
     lettuce:
       pool:
         max-active: 300
   datasource:
-    url: jdbc:${DATASOURCE_DBTYPE:mysql}://${DATASOURCE_HOST:127.0.0.1}:${DATASOURCE_PORT:6033}/wk_hrm_single?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&serverTimezone=Asia/Shanghai&useAffectedRows=true
-    username: ${DATASOURCE_USERNAME:rxl}
-    password: ${DATASOURCE_PASSWORD:J98#fjuPS1&ju}
+    url: jdbc:${DATASOURCE_DBTYPE:mysql}://${DATASOURCE_HOST:192.168.30.86}:${DATASOURCE_PORT:3306}/wk_hrm_single?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull&tinyInt1isBit=false&serverTimezone=Asia/Shanghai&useAffectedRows=true
+    username: ${DATASOURCE_USERNAME:wkcrm}
+    password: ${DATASOURCE_PASSWORD:m6364350*dy}
 mybatis-plus:
   configuration:
     call-setters-on-nulls: true

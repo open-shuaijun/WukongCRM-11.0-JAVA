@@ -40,11 +40,11 @@ public class ParamAspect implements Ordered {
     @Autowired
     private Redis redis;
 
-    @CreateCache(name = Const.COMPANY_MANAGE_CACHE_NAME, expire = 3, timeUnit = TimeUnit.DAYS)
-    private Cache<Long, Boolean> companyCache;
+//    @CreateCache(name = Const.COMPANY_MANAGE_CACHE_NAME, expire = 3, timeUnit = TimeUnit.DAYS)
+//    private Cache<Long, Boolean> companyCache;
 
-    @Autowired
-    private AdminService adminService;
+//    @Autowired
+//    private AdminService adminService;
 
     @Around("(execution(* com.kakarote.*.controller..*(..))||execution(* com.kakarote.*.*.controller..*(..))) && execution(@(org.springframework.web.bind.annotation.*Mapping) * *(..))  && !execution(@(com.kakarote.core.common.ParamAspect) * *(..))")
     public Object around(ProceedingJoinPoint point) throws Throwable {

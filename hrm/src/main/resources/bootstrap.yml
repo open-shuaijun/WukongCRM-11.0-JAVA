@@ -9,12 +9,12 @@ spring:
     nacos:
       config:
         enabled: true
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.30.86:8848
         file-extension: yaml
         prefix: hrm
       discovery:
         enabled: true
-        server-addr: 127.0.0.1:8848
+        server-addr: 192.168.30.86:8848
     sentinel:
       filter:
         enabled: false
@@ -22,7 +22,7 @@ spring:
         dashboard: ${SENTINEL_DASHBOARD_HOST:127.0.0.1}:${SENTINEL_DASHBOARD_PORT:8079}
       datasource:
         flow:
-          server-addr: 127.0.0.1:8848
+          server-addr: 192.168.30.86:8848
           dataId: ${spring.application.name}-flow-rules
           groupId: SENTINEL_GROUP
           rule-type: flow
@@ -34,12 +34,18 @@ seata:
     type: nacos
     nacos:
       namespace:
-      serverAddr: 127.0.0.1:8848
-      group: SEATA_GROUP
+      serverAddr: 192.168.30.86:8848
+      group: DEFAULT_GROUP
+      dataId: 'seataServer'
+      username: 'nacos'
+      password: 'nacos'
   registry:
     type: nacos
     nacos:
       application: seata-server
-      server-addr: 127.0.0.1:8848
+      server-addr: 192.168.30.86:8848
       namespace:
+      group: DEFAULT_GROUP
+      username: 'nacos'
+      password: 'nacos'
 
